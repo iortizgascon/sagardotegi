@@ -1,30 +1,19 @@
-var inicializado = false;
-
 var latitud;
 var longitud;
 
 $(document).ready(function(){
-	sagardo_init();
+	//sagardo_init();
 });
 
 
 function sagardo_init(){
 
-	//para que solo se ejecute una vez:
-	if (!inicializado){
+	$("#distancia").change(function(){
+		if ($("#distancia").val()) buscarSagardos($("#distancia").val());
 
-		
+	});
 
-		inicializado = true;
-
-		$("#distancia").change(function(){
-			if ($("#distancia").val()) buscarSagardos($("#distancia").val());
-
-		});
-
-		navigator.geolocation.getCurrentPosition(geoLocExito,geoLocError,{enableHighAccuracy:true});
-		
-	}
+	navigator.geolocation.getCurrentPosition(geoLocExito,geoLocError,{enableHighAccuracy:true});
 
 }
 
