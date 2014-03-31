@@ -8,6 +8,8 @@ $(document).ready(function(){
 
 function sagardo_init(){
 
+	alert("iniciamos");
+
 	$("#distancia").change(function(){
 		if ($("#distancia").val()) buscarSagardos($("#distancia").val());
 
@@ -18,6 +20,8 @@ function sagardo_init(){
 }
 
 function geoLocExito(position){
+	alert("geolocalizamos");
+
 	latitud = position.coords.latitude;
 	longitud = position.coords.longitude; 
 
