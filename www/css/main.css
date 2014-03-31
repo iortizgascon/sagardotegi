@@ -164,21 +164,27 @@ ul.listaMovil {
 }
 
 ul.listaMovil li {
-	padding:2em 1em;
+	padding:1em 1em;
 	border-width:0px 0px 1px 0px;
 	border-style:solid;
-	border-color:#95B646
+	border-color:#95B646;
+	clear:both;
 }
 
 ul.listaMovil li h2{display:inline}
-ul.listaMovil .poblacion{font-size:1.2em}
+ul.listaMovil .poblacion{font-size:1.3em}
+ul.listaMovil .puntuacion{font-weight:bold}
 
-.distanciaForm {margin:1em 0;clear:both;color:#ffffff;font-weight:bold}
-.distanciaForm #distancia{width:2em;}
+ul.listaMovil li img{float:right;margin-right:1em;width:45%}
+
+
+.distanciaForm {margin:1em 0;clear:both;color:#ffffff;font-weight:bold;font-size:1.4em}
+.distanciaForm #distancia{width:3em;}
 
 
 .tocado{background-color:#95B646}
 
+.salto{width:100%;clear:both;}
 
 
 
