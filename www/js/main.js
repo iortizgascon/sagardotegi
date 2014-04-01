@@ -28,7 +28,6 @@ function geoLocExito(position){
 	latitud = position.coords.latitude;
 	longitud = position.coords.longitude; 
 
-
 	buscarSagardos($("#distancia").val());
 }
 
@@ -43,6 +42,16 @@ function geoLocError(error){
 }
 
 
+function bindLinkList(){
+	$( "#listado a" ).on( "click", function( event ) {
+		
+		event.preventDefault();
+		
+		$.mobile.navigate( "#ficha");
+		cargarFicha( $(this).attr("href") );
+	});
+	
+}
 
 
 function buscarSagardos(distancia){
@@ -50,19 +59,22 @@ function buscarSagardos(distancia){
 
 	$.post( url, { latitud: latitud, longitud: longitud, distancia: distancia }, function(data){
 			$("#listado").html(data);
-			convertirEnlaces();
-		},"html");
+			 bindLinkList();
+			
+		});
 
 }
 
-function convertirEnlaces(){
+function cargarFicha(carpeta){
 
-	$(".listaMovil li").each(function(){
-		$(this).click(function(){
-			$(this).addClass("tocado");
-			carpeta = $(this).attr("id").substring(4);
-			document.location.href = "http://www.sagardotegi.eu/sidrerias/" + carpeta + "/";
-		});
+$("#ficha").html("cargando...");	
+	url = "http://www.sagardotegi.eu/geo/ficha/";
+
+	$.post( url, { carpeta: carpeta }, function(data){
+		
+		$("#ficha").html(data);			
 	});
 
 }
+
+

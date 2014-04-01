@@ -8,6 +8,9 @@ textarea {
     color: #222;
 }
 
+a{text-decoration:none;}
+
+
 html {
     font-size: 1em;
     line-height: 1.4;
@@ -156,14 +159,14 @@ nav a:hover {
 
 
 
-ul.listaMovil {
+#listado ul {
 	list-style:none;
 	margin:0px;
 	padding:0px;
 	width:100%
 }
 
-ul.listaMovil li {
+#listado ul li {
 	padding:1em 1em;
 	border-width:0px 0px 1px 0px;
 	border-style:solid;
@@ -171,11 +174,11 @@ ul.listaMovil li {
 	clear:both;
 }
 
-ul.listaMovil li h2{display:inline}
-ul.listaMovil .poblacion{font-size:1.3em}
-ul.listaMovil .puntuacion{font-weight:bold}
+#listado ul li h2{display:inline}
+#listado ul .poblacion{font-size:1.3em}
+#listado ul .puntuacion{font-weight:bold}
 
-ul.listaMovil li img{float:right;margin-right:1em;width:45%}
+#listado ul li img{float:right;margin-right:1em;width:45%}
 
 
 .distanciaForm {margin:1em 0;clear:both;color:#ffffff;font-weight:bold;font-size:1.4em}
@@ -186,7 +189,7 @@ ul.listaMovil li img{float:right;margin-right:1em;width:45%}
 
 .salto{width:100%;clear:both;}
 
-
+#ficha {padding:1em}
 
 
 

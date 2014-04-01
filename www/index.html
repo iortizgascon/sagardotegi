@@ -11,7 +11,8 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
      
  	
-	<link rel="stylesheet" href="css/normalize.min.css">
+	
+	<link rel="stylesheet" href="js/jquerymobile/jquery.mobile-1.4.2.min.css">
         <link rel="stylesheet" href="css/main.css">
 
         <title>Sagardotegi.eu</title>
@@ -19,28 +20,38 @@
     <body>
        
 
-	 <div class="header-container">
-            <header class="wrapper clearfix">
-                <h1 class="title">Sagardotegi.eu</h1>
-                <div class="distanciaForm">
-			<label for="distancia">Distancia</label>
-			<input type="text" name="distancia" id="distancia" value="20"  /> km
-		</div>
-            </header>
-        </div>
 
-        <div class="main-container">
-            <div class="main wrapper clearfix">
+		<div data-role="page"  >
 
-
-		<div id="listado">
-
+		 <div data-role="header">
+		    <header class="wrapper clearfix">
+		        <h1 class="title">Sagardotegi.eu</h1>
+		        <div class="distanciaForm">
+				<label for="distancia">Distancia (km)</label>
+				<input type="text" name="distancia" id="distancia" value="20"  />
+			</div>
+		    </header>
 		</div>
 
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
 
-      
+			<div id="listado">
+
+			</div>
+		</div>
+
+
+
+
+
+
+		<!-- Start of second page: #two -->
+		<div data-role="page" id="ficha" >
+
+		
+		</div><!-- /page two -->
+
+
+		</div>
 
        
 
@@ -49,6 +60,7 @@
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
  	<script src="js/vendor/jquery-1.11.0.min.js"></script>      
+ 	<script src="js/jquerymobile/jquery.mobile-1.4.2.min.js"></script>  
         <script src="js/main.js"></script>
 
         <script type="text/javascript">
