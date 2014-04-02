@@ -84,11 +84,11 @@ body {
 .header-container,
 .footer-container,
 .main aside {
-    background: #95B646;
+
 }
 
 .title {
-    color: white;
+    color: #95B646;
 }
 
 /* ==============
@@ -158,15 +158,15 @@ nav a:hover {
 
 
 
-
-#listado ul {
+/*
+#listado {
 	list-style:none;
 	margin:0px;
 	padding:0px;
 	width:100%
 }
 
-#listado ul li {
+#listado li {
 	padding:1em 1em;
 	border-width:0px 0px 1px 0px;
 	border-style:solid;
@@ -174,23 +174,36 @@ nav a:hover {
 	clear:both;
 }
 
-#listado ul li h2{display:inline}
-#listado ul .poblacion{font-size:1.3em}
-#listado ul .puntuacion{font-weight:bold}
+#listado li h2{display:inline}
+#listado .poblacion{font-size:1.3em}
+#listado .puntuacion{font-weight:bold}
 
-#listado ul li img{float:right;margin-right:1em;width:45%}
+#listado li img{float:right;margin-right:1em;width:45%}
 
 
 .distanciaForm {margin:1em 0;clear:both;color:#ffffff;font-weight:bold;font-size:1.4em}
 .distanciaForm #distancia{width:3em;}
-
+*/
 
 .tocado{background-color:#95B646}
-
 .salto{width:100%;clear:both;}
+
 
 #ficha {padding:1em}
 
+.fotoSidreria img{width:75%}
+
+.tablaValoraciones{
+	width:60%;
+	border-width:1px;
+	border-style:solid;
+	border-color:#cccccc;
+	border-collapse: collapse;
+	
+}
+
+.tablaValoraciones th, .tablaValoraciones td{text-align:left;border-width:0px 0px 1px 0px;border-style:solid;border-color:#cccccc;padding:2px}
+.tablaValoraciones td{width:25%}
 
 
 

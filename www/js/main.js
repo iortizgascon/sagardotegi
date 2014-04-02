@@ -47,7 +47,7 @@ function bindLinkList(){
 		
 		event.preventDefault();
 		
-		$.mobile.navigate( "#ficha");
+		$.mobile.changePage( "#ficha",{ transition: "slide"});
 		cargarFicha( $(this).attr("href") );
 	});
 	
@@ -59,6 +59,7 @@ function buscarSagardos(distancia){
 
 	$.post( url, { latitud: latitud, longitud: longitud, distancia: distancia }, function(data){
 			$("#listado").html(data);
+			$('#listado').listview('refresh');
 			 bindLinkList();
 			
 		});
@@ -67,12 +68,13 @@ function buscarSagardos(distancia){
 
 function cargarFicha(carpeta){
 
-$("#ficha").html("cargando...");	
+	
 	url = "http://www.sagardotegi.eu/geo/ficha/";
 
 	$.post( url, { carpeta: carpeta }, function(data){
 		
-		$("#ficha").html(data);			
+		$("#ficha").html(data).trigger('create');	
+
 	});
 
 }
