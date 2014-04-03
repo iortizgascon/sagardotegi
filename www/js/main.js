@@ -55,6 +55,8 @@ function bindLinkList(){
 
 function buscarSagardos(distancia){
  
+	$.mobile.loading("show");
+
 	$( "#list-switch" ).trigger("click");
 
 	url = "http://www.sagardotegi.eu/geo/";
@@ -63,6 +65,7 @@ function buscarSagardos(distancia){
 			$("#list-results").html(data);
 			$('#list-results').listview('refresh');
 			 bindLinkList();
+			$.mobile.loading("hide");
 			
 		});
 
