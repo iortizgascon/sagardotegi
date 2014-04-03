@@ -1,7 +1,7 @@
 var inicializar=true;
 
-var latitud;
-var longitud;
+var latitud="43.3174604";
+var longitud="-1.9685667";
 
 $(document).ready(function(){
 	sagardo_init();
@@ -19,7 +19,7 @@ function sagardo_init(){
 		});
 
 		navigator.geolocation.getCurrentPosition(geoLocExito,geoLocError,{enableHighAccuracy:true});
-
+		//para probar con FF buscarSagardos($("#distancia").val());
 	}
 }
 
@@ -33,33 +33,35 @@ function geoLocExito(position){
 
 function geoLocError(error){
 	alert("No se ha detectado la ubicación");
-
-	//datos de pruebas
-	latitud = "43.3174604";
-	longitud = "-1.9685667";
-
+	
 	buscarSagardos($("#distancia").val());
 }
 
 
 function bindLinkList(){
-	$( "#listado a" ).on( "click", function( event ) {
-		
+	$( "a" ).on( "click", function( event ) {
+
 		event.preventDefault();
 		
 		$.mobile.changePage( "#ficha",{ transition: "slide"});
 		cargarFicha( $(this).attr("href") );
-	});
-	
+
+	});	
 }
 
 
+	
+
+
 function buscarSagardos(distancia){
+ 
+	$( "#list-switch" ).trigger("click");
+
 	url = "http://www.sagardotegi.eu/geo/";
 
 	$.post( url, { latitud: latitud, longitud: longitud, distancia: distancia }, function(data){
-			$("#listado").html(data);
-			$('#listado').listview('refresh');
+			$("#list-results").html(data);
+			$('#list-results').listview('refresh');
 			 bindLinkList();
 			
 		});
@@ -67,16 +69,32 @@ function buscarSagardos(distancia){
 }
 
 function cargarFicha(carpeta){
-
-	
 	url = "http://www.sagardotegi.eu/geo/ficha/";
-
 	$.post( url, { carpeta: carpeta }, function(data){
-		
 		$("#ficha").html(data).trigger('create');	
-
 	});
-
 }
+
+
+// MAPA
+
+$( document ).on( "pagecreate", "#map-page", function() {
+    var $mapSwitch = $( "#map-switch" ),
+        $listSwitch = $( "#list-switch" ),
+        $map = $( "#map-canvas" ),
+        $list = $( "#list-canvas" );
+    $mapSwitch.on( "click", function( e ){
+        $map.show();
+        $map.gmap();
+        $list.hide();
+
+    });
+    $listSwitch.on( "click", function( e ){
+        $list.show();
+        $map.hide();
+    });
+   
+});
+
 
 
