@@ -205,6 +205,7 @@ nav a:hover {
 .tablaValoraciones th, .tablaValoraciones td{text-align:left;border-width:0px 0px 1px 0px;border-style:solid;border-color:#cccccc;padding:2px}
 .tablaValoraciones td{width:25%}
 
+.distanciaForm{clear:both}
 
 /*
 Mapa...
@@ -212,7 +213,7 @@ Mapa...
 
 .segmented-control { text-align:center; }
 .segmented-control .ui-controlgroup { display:inline; margin:.2em 0px; }
-#map-page { width:100%; height:100%; }
+
 #map-canvas { width:100%; height:100%; margin-top:-30px; padding:0px!important; }
 #gmap-marker-link { color:#00a0df; text-decoration:none; }
 .ui-gmap-canvas { width:100%; height:100%; }

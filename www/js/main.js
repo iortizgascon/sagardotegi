@@ -64,6 +64,7 @@ function buscarSagardos(distancia){
 	$.post( url, { latitud: latitud, longitud: longitud, distancia: distancia }, function(data){
 			$("#list-results").html(data);
 			$('#list-results').listview('refresh');
+			$('#list-results').trigger( 'updatelayout' );
 			 bindLinkList();
 			$.mobile.loading("hide");
 			
